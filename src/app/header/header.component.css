@@ -1,0 +1,49 @@
+
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+header #logo {
+    margin: 1rem;
+}
+
+header img {
+    margin: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+@media (min-width:600px) {
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+header nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #F9D0A3;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li a {
+    margin: 1rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #151217;
+}
+
+header nav ul li a:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}

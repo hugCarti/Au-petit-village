@@ -1,0 +1,11 @@
+
+<main>
+    <article *ngFor='let item of list'>
+        <img src='{{item.photo}}' alt='photo de {{item.name}}'>
+        <figure>
+            <h4>{{item.name}}</h4>
+            <p>{{item.description}}</p>
+            <p>{{item.price}}€</p>
+        </figure>
+    </article>
+</main>
