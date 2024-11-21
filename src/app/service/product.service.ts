@@ -1,20 +1,10 @@
-import { Component } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { SortByPricePipe } from '../sort-by-price.pipe';
-import { FilterByNamePipe } from '../filter-by-name.pipe';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule, CurrencyPipe, FormsModule, SortByPricePipe, FilterByNamePipe ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+@Injectable({
+  providedIn: 'root',
 })
-export class HomeComponent {
-
-  list = [
+export class ProductService {
+  private products = [
     {
       id: 1,
       photo: 'assets/pop-asterix.jpg',
@@ -43,10 +33,19 @@ export class HomeComponent {
       description: 'figurine pop représentant Astérix et Obélix, les deux héros du village Gaulois',
       price: 479.99,
     },
-  ]
+  ];
 
-  sortOrder:string = 'asc';
-  filterOrder:string = '';
+  constructor() {}
 
+  // Retourne la liste complète des produits
+  getProducts() {
+    return this.products;
+  }
+
+  // Retourne un produit par son id
+  getProductById(id: number) {
+    const product = this.products.find((product) => product.id === id);
+    console.log('Finding product by ID:', id, 'Result:', product); // Log pour vérifier
+    return product;
+  }
 }
-

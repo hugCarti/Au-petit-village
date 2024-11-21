@@ -1,11 +1,11 @@
 
 <header>
     @if (!open) {
-        <img (click)='logoOpenHeader()' src='assets/logo.png' alt='logo' id="logo">
+        <img (click)='logoOpenHeader()' src='assets/icons/logo.png' alt='logo' id="logo">
     }
     <nav>
         @if (open) {
-            <img (click)='logoOpenHeader()' src='assets/logo.png' alt='logohearder' >
+            <img (click)='logoOpenHeader()' src='assets/icons/logo.png' alt='logohearder' >
             <ul>
                 <li><a routerLink='/'>Accueil</a></li>
                 <li><a routerLink='/about'>À propos</a></li>

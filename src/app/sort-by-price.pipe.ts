@@ -6,15 +6,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortByPricePipe implements PipeTransform {
 
-  sortOrder:number= 1;
-  asc() { this.sortOrder = 1; }
-  desc() { this.sortOrder = -1; }
+  transform(list: any[], sortOrder: string): any[] {
+    if (!list || !sortOrder) {
+      return list; // Retourne la liste originale si `list` ou `sortOrder` est indéfini
+    }
 
-  transform( list: any[]): any[] {
-    return list.sort(( a:any ,b:any ) => {
-      if (a.price < b.price) { return -this.sortOrder; }
-      else if (a.price > b.price) { return this.sortOrder; }
-      else return 0;
-    })
+    return list.sort((a: any, b: any) => {
+      if (sortOrder === "asc") {
+        return a.price - b.price; // Tri croissant
+      } else if (sortOrder === "desc") {
+        return b.price - a.price; // Tri décroissant
+      }
+      return 0; // Pas de changement si le `sortOrder` est invalide
+    });
   }
 }

@@ -1,0 +1,53 @@
+
+section {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width:960px) {
+    section {
+        flex-direction: row;
+    }
+
+    img {
+        width: 50%;
+    }
+
+    article {
+        margin-top: 200px;
+    }
+}
+
+article {
+    margin-left: 2rem;
+}
+
+img {
+    width: 100%;
+}
+
+article button img {
+    width: 30px;
+    height: 30px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+p {
+    font-size: large;
+}
+
+button {
+    padding: 0.5rem 3rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: #DA001E;
+    font-size: large;
+}
+
+button:active {
+    background-color: #FDD90B;
+}

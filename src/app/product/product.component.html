@@ -1,11 +1,10 @@
-
-<main>
-    <article *ngFor='let item of list'>
-        <img src='{{item.photo}}' alt='photo de {{item.name}}'>
-        <figure>
-            <h4>{{item.name}}</h4>
-            <p>{{item.description}}</p>
-            <p>{{item.price}}€</p>
-        </figure>
+<section>
+    <img class="image-figurine" [src]="product.photo" [alt]="'photo de ' + product.name">
+    <article>
+        <button class="back" routerLink='/'><img src="assets/icons/back.png" alt="retour"></button>
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price | currency: 'EUR' }}</p>
+        <button>acheter</button>
     </article>
-</main>
+</section>

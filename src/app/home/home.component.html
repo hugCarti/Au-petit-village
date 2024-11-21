@@ -19,35 +19,32 @@
             <h2>Pourquoi choisir 'Au petit village'?</h2>
             <p>Avec 'Au petit village', vous ne faites pas qu’acheter une paire : vous rejoignez une communauté de passionnés et partagez un morceau d’histoire. Plongez dans un voyage nostalgique 
                 au cœur d’un petit village où l’art, l’humour et l’esprit d’aventure gaulois prennent vie à travers nos créations.</p>
-            <button href='#'>Voir plus</button>
         </figure>
     </aside>
 
-    <h3>Catalogue des Produits</h3>
+    <h3>Catalogue des Produits</h3> 
 
     <section class='container-barre'>
         <div class='container-trie'>
             <label>Trier par prix :</label>
 
-            <select>
-                <option (click)='asc()'>Prix croissant</option>
-                <option (click)='desc()'>Prix décroissant</option>
+            <select [(ngModel)]='sortOrder'>
+                <option value="asc">Prix croissant</option>
+                <option value="desc">Prix décroissant</option>
             </select>
         </div>
-        <div class='container-search'>
-            <input type='search' [(ngModel)]="searchQuery" placeholder='Rechercher un produit...' />
-            <button (click)="search()"><img src='assets/recherche.png' alt="icon recherche"></button>
-        </div>
+        <input type='search' [(ngModel)]='filterOrder' placeholder='Rechercher un produit...' />
     </section>
-    <section class="container-product">
-            <article *ngFor='let item of ( list | sortByPrice )'routerLink='/product'>
-                <img src='{{item.photo}}' alt='photo de {{item.name}}'>
-                <figure>
-                    <h4 *ngFor="let result of results | searchFilter:searchQuery">{{item.name}}</h4>
-                    <p>{{item.description}}</p>
-                    <p>{{item.price | currency:'€'}}</p>
-                </figure>
-            </article>
+
+    <section class='container-product'>
+        <article *ngFor='let item of (list | sortByPrice:sortOrder | filterByName:filterOrder)' [routerLink]="['/product', item.id]">
+            <img src='{{item.photo}}' alt='photo de {{item.name}}'>
+            <figure>
+                <h4>{{item.name}}</h4>
+                <p>{{item.description}}</p>
+                <p>{{item.price | currency:'EUR'}}</p>
+            </figure>
+        </article>
     </section>
 
 </main>

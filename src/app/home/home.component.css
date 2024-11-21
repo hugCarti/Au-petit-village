@@ -10,7 +10,7 @@ main {
 
 @media (min-width:1025px) {
 
-    main aside {
+    aside {
         display: flex;
         position: relative;
         padding: 0 10%;
@@ -18,7 +18,7 @@ main {
         align-items: center;
     }
 
-    main aside div {
+    aside div {
         position: relative;
         width: 800px;
         height: 600px;
@@ -27,7 +27,7 @@ main {
         float: left;
     }
 
-    main aside figure {
+    aside figure {
         position: absolute;
         max-width: 400px;
         background-color: #F9D0A3;
@@ -37,11 +37,11 @@ main {
         line-height: 1.5;
     }
 
-    main aside .figure-right {
+    aside .figure-right {
         right: 0;
     }
 
-    main aside .figure-right::after {
+    aside .figure-right::after {
         background-color: #FDD90B;
         background-image: -webkit-linear-gradient(-270deg, #FDD90B 0%, #4cd8b0 100%);
         border-bottom-right-radius: .25rem;
@@ -57,11 +57,11 @@ main {
         width: .25rem;
     }
 
-    main aside .figure-left {
+    aside .figure-left {
         left: 0;
     }
  
-    main aside .figure-left::before {
+    aside .figure-left::before {
         background-color: #FDD90B;
         background-image: -webkit-linear-gradient(-270deg, #FDD90B 0%, #4cd8b0 100%);
         border-bottom-left-radius: .25rem;
@@ -79,14 +79,14 @@ main {
 
 }
 
-main aside figure {
+aside figure {
     background-color: #F9D0A3;
     padding: 20px;
     margin: 0;
     line-height: 1.5;
 }
 
-main aside figure button{
+aside figure button{
     border: none;
     font-size: 1.2rem;
     background-color: #F9D0A3;
@@ -95,79 +95,62 @@ main aside figure button{
     color: #151217;
 }
 
-main aside figure button:hover {
+aside figure button:hover {
     transition: 0.5s;
     background-color: #151217;
     color: #DA001E;
 }
 
-main h3 {
+h3 {
     font-size: 2rem;
     margin-top: 100px;
 }
 
-main h4 {
+h4 {
     font-size: 1.3rem;
 }
 
-main .container-barre {
+.container-barre {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-main label {
+.container-barre label {
     padding: 0.5rem;
 }
 
-main select {
+.container-barre select {
     align-self: start;
     border-radius: 2rem;
     padding: 0.5rem;
 }
 
-main .container-search {
+
+.container-barre input{
     border: solid 1px black;
     margin-right: 2rem;
     border-radius: 2rem;
     padding-left: 1rem;
 }
 
-main .container-search input{
-    border: none;
-}
-
-main .container-search input:focus{
-    outline: none;
-}
-
-main .container-search button {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 2rem;
-    border-right: none;
-    background-color: white;
-}
-
-main .container-search button img{
-    width: 1rem;
-    height: 1rem;
-}
-
-main .container-product {
+.container-product {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
-main .container-product article {
+.container-product article {
     border-radius: 2rem;
     box-shadow: 0 4px 6px 6px rgba(0, 0, 0, 0.1);
     width: 20rem;
     margin: 2rem;
 }
 
-main .container-product article img {
+.container-product article:hover {
+    cursor: pointer;
+}
+
+.container-product article img {
     width: 20rem;
     height: 20rem;
     border-top-left-radius: 2rem;
