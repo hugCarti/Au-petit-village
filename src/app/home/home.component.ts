@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { SortByPricePipe } from '../sort-by-price.pipe';
 import { FilterByNamePipe } from '../filter-by-name.pipe';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
