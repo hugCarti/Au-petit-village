@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductService } from '../service/product.service';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -19,7 +18,7 @@ export class ProductComponent implements OnInit {
     private productService: ProductService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     // Récupération de l'ID depuis l'URL
     const productId = Number(this.route.snapshot.paramMap.get('id'));
     console.log('Product ID from URL:', productId); // Ajoutez ce log pour vérifier l'ID
